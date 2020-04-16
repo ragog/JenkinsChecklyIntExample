@@ -1,9 +1,7 @@
 pipeline {
     agent any
     stages {
-      
-      stages {
-        
+            
         stage('Build') {
             steps {
                 sh 'echo "Building..."'
@@ -27,6 +25,5 @@ pipeline {
                 sh 'if [ $(grep -c "hasFailures":true ${PWD}/checkly.json) -ne 0 ]; then exit 1; fi'
             }
         }
-      }
     }
 }
